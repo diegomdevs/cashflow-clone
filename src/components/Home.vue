@@ -3,6 +3,8 @@ import Layout from './Layout.vue';
 import Header from './Header.vue';
 import Resume from './Resume/Index.vue';
 import Movements from './Movements/Index.vue';
+import Action from './Action.vue';
+import Graphic from './Graphic.vue';
 interface movement {
   id: number,
   title: string,
@@ -41,6 +43,7 @@ const movements: movement[] = [
     amount: 1000,
   },
 ]
+const amounts: number[] = [100, 200, 500, 200, -400, -600, -300, 0, 300, 500];
 </script>
 
 <template>
@@ -51,10 +54,10 @@ const movements: movement[] = [
     <template #resume>
       <Resume :label="new Date()" :total-amount="10000" :amount="3">
         <template #graphic>
-          graphic
+          <Graphic :amounts="amounts" />
         </template>
         <template #action>
-          action
+          <Action />
         </template>
       </Resume>
     </template>
